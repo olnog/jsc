@@ -16,7 +16,7 @@ class Game{
 		setTimeout(game.count, 1000);
 	}
 	preload (){		
-		this.load.setBaseURL('http://192.168.1.136/jsc');		
+		this.load.setBaseURL('http://internetwebsite.cyou/jsc/');		
 		this.load.image('background', 'assets/night.png');
 		this.load.image('house', 'assets/house1.png');
 		this.load.image('houseHit', 'assets/houseHit.png');
