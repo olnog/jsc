@@ -2,6 +2,7 @@
 const HOUSE_SPEED = -150;
 const JET_SPEED = -150;
 const LANE = [32, 120];
+create = new Create();
 game = new Game()
 config = new Config();
 

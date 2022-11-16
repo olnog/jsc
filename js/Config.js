@@ -26,7 +26,7 @@ class Config {
 	};
 	scene = {
 		preload: game.preload,
-		create: game.create,
+		create: create.do,
 		renderer: game.renderer,
 		update: game.update,
 		

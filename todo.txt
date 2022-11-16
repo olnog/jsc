@@ -1,4 +1,4 @@
-make score bigger
+XXX make score bigger
 score should go higher if you're higher 
 score bonus for successive chimney hits
 check physics bodies for jesus and jet
