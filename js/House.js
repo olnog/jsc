@@ -7,14 +7,15 @@ class House {
 		if (!chimney.body.touching.up || chimney.wasHit){
 			return;
 		}
-		
-		this.deliveredTo.visible = true;
-		this.deliverTo.visible = false;
-		if (!chimney.wasHit && !this.deliverTo.wasHit ){
-			game.score += 10;				
-		}
-		if (!chimney.wasHit && this.deliverTo.wasHit ){
-			game.score++;
+		game.gift.successive++;
+		game.house.deliveredTo.visible = true;
+		game.house.deliverTo.visible = false;
+		if (!chimney.wasHit && !game.house.deliverTo.wasHit && game.gift.droppedFrom == 0){
+			game.score += (10 * game.gift.successive);				
+		} else if (!chimney.wasHit && !game.house.deliverTo.wasHit && game.gift.droppedFrom == 1){
+			game.score += (2 * game.gift.successive);				
+		} else if (!chimney.wasHit){
+			game.score += game.gift.successive;
 		}
 		chimney.wasHit = true;
 		gift.visible = false;
@@ -23,7 +24,6 @@ class House {
 	}
 	
 	hit(houseHit, gift){
-		
 		if (!houseHit.wasHit && houseHit.body.touching.up){
 			houseHit.wasHit = true;
 		}
@@ -49,8 +49,15 @@ class House {
 		this.chimney.wasHit = false;        
     }
 
+	reset(){
+		this.deliveredTo.body.reset(384, 210, 'houseHit');
+        this.deliverTo.body.reset(384, 210, 'house');
+        this.chimney.body.reset(384, 174, 'chimney'); 
+	}
+
     update(){
         if (this.deliverTo.x <= -128){
+			game.gift.reset();
 			game.updateScore();
 			let randPos = 384 +randNum(1,256);
 			this.deliverTo.x = randPos;
@@ -58,8 +65,7 @@ class House {
 			this.chimney.x = randPos + randNum(-60, 72);
 			this.deliverTo.wasHit = false;
 			this.chimney.wasHit = false;
-			game.gift.ready = true;
-			game.gift.visible = true;
+			
 			this.deliverTo.visible = true;
 			this.deliveredTo.visible = false;
 		}

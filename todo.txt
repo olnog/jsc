@@ -1,12 +1,15 @@
 XXX make score bigger
-score should go higher if you're higher 
-score bonus for successive chimney hits
-check physics bodies for jesus and jet
-jet should be able to hit gift
-and gift should be able to be thrown more than once per house
+XXX score should go higher if you're higher 
+XXX score bonus for successive chimney hits
+check physics bodies for jesus and jet (idk what this means)
+XXX jet should be able to hit gift
+XXX and gift should be able to be thrown more than once per house (didn't do this but I did show an icon for when gifti s available)
 
 
-scene restart
-high score
+XXX scene restart
+XXX high score
+
+
+
 particle effect when landing in chimney
 UI

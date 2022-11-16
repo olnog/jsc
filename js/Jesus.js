@@ -7,7 +7,18 @@ class Jesus {
 		//phaser.registry.destroy(); 
 		//phaser.events.off();
 		//config.scene.restart();
-		location.reload();
+		//location.reload();
+		console.log(game.failText.visible);
+		phaser.scene.pause('default');
+		game.hiScoreText.visible = true;
+		let msg = "High score: ";
+		if (game.score > game.highScore){
+			game.highScore = game.score;
+		}
+		game.hiScoreText.setText(msg + " " + game.highScore + "" )
+		game.countdownText.visible = true;
+		setTimeout(game.count, 1000);
+		//game.restart();
 	}
 
     init(){
